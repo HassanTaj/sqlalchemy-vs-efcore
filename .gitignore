@@ -3,3 +3,5 @@
 ################################################################################
 
 /.vs
+/ef_todos_console/bin/Debug/netcoreapp3.1
+/ef_todos_console/obj
