@@ -13,7 +13,7 @@ namespace ef_todos_console {
           
             var repo = new TodoRepo();
             Console.WriteLine($"number of Todos in db : {repo.GetAll().Count()}");
-            repo.Create(new Models.Todo() { Task = "Do something form .net console" });
+            //repo.Create(new Models.Todo() { Task = "Do something form .net console" });
             Console.WriteLine($"number of Todos in db : {repo.GetAll().Count()}");
 
             Console.ReadKey();

@@ -52,6 +52,5 @@ class BaseRepository(object):
 		except Exception:
 		   print(ex)
 
-
 	# generates a Guid for inserting shit in sql server with a GUID as a primary key
 	def generateUniqueId(self): return str(uuid.uuid4())

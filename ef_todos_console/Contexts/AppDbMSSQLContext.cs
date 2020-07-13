@@ -9,6 +9,8 @@ namespace ef_todos_console.Contexts {
 
 
         public DbSet<Todo> Todos { get; set; }
+        public DbSet<Answer> Answers { get; set; }
+        public DbSet<Question> Questions { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ef_todos_console.Contexts;
 
 namespace ef_todos_console.Migrations
 {
     [DbContext(typeof(AppDbMSSQLContext))]
-    partial class AppDbMSSQLContextModelSnapshot : ModelSnapshot
+    [Migration("20200407223640_ask_me")]
+    partial class ask_me
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
