@@ -5,11 +5,11 @@ class ConnectionStringAdapter(object):
     def __init__(self,connectionStringObj:ConnectionStringModel=None,connectionType:ConnectionType=None):
         self.conString = ''
         # for Sqlite connection based on a database url
-        if(self.conType == ConnectionType.sql_lite):
+        if(self.connectionType == ConnectionType.sql_lite):
             # path to sqlite.db file     
             self.conString = 'sqlite:////$s' % self.conS.databaseUrl
         # for mssql connection based on credidentials
-        elif(self.conType == ConnectionType.mssql):
+        elif(self.connectionType == ConnectionType.mssql):
             # mssql connection string
             con = f"""DRIVER={{SQL Server}};
             SERVER={self.conS.host};
@@ -20,13 +20,12 @@ class ConnectionStringAdapter(object):
             params = urllib.parse.quote_plus(con)
             self.conString = "mssql+pyodbc:///?odbc_connect=%s" % params
         # for postgress sql based on credidentials
-        elif(self.conType == ConnectionType.postgresql):
+        elif(self.connectionType == ConnectionType.postgresql):
             # username:password@host/databasename
             con = f"""{self.conS.username}:{self.conS.password}@{self.conS.host}/{self.conS.username}"""
             params = urllib.parse.quote_plus(con)
             self.conString = "postgresql://" % params
 
-        self.conType = connectionType
         self.conS = connectionStringObj
 
     # connection string builder

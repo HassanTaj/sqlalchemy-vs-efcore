@@ -8,7 +8,7 @@ from sqlalchemy.orm import sessionmaker
 class UnitOfWork(object):
 	def __init__(self):
 		# get adapter
-		adapter  = ConnectionStringAdapter(ConnectionStringModel(
+		adapter = ConnectionStringAdapter(ConnectionStringModel(
 			dbUrl= ""
 		),ConnectionType.sql_lite)
 		# get connection
