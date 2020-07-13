@@ -5,6 +5,7 @@ class ConnectionStringAdapter(object):
     def __init__(self,connectionStringObj:ConnectionStringModel=None,connectionType:ConnectionType=None):
         self.conString = ''
         self.connectionType = connectionType
+        self.conS = connectionStringObj
         # for Sqlite connection based on a database url
         if(self.connectionType == ConnectionType.sql_lite):
             # path to sqlite.db file     
@@ -26,7 +27,6 @@ class ConnectionStringAdapter(object):
             con = f"""{self.conS.username}:{self.conS.password}@{self.conS.host}/{self.conS.username}"""
             params = urllib.parse.quote_plus(con)
             self.conString = "postgresql://" % params
-        self.conS = connectionStringObj
 
     # connection string builder
     def getConnectionString(self):
