@@ -26,7 +26,6 @@ class ConnectionStringAdapter(object):
             con = f"""{self.conS.username}:{self.conS.password}@{self.conS.host}/{self.conS.username}"""
             params = urllib.parse.quote_plus(con)
             self.conString = "postgresql://" % params
-
         self.conS = connectionStringObj
 
     # connection string builder
