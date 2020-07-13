@@ -4,6 +4,7 @@ from helpers.ConnectionStringModule import ConnectionStringModel
 class ConnectionStringAdapter(object):
     def __init__(self,connectionStringObj:ConnectionStringModel=None,connectionType:ConnectionType=None):
         self.conString = ''
+        self.connectionType = connectionType
         # for Sqlite connection based on a database url
         if(self.connectionType == ConnectionType.sql_lite):
             # path to sqlite.db file     
